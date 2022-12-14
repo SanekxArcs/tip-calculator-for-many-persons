@@ -22,13 +22,15 @@ checkboxPerson = document.querySelectorAll(".checkbox-person");
 //   }
 // });
 
-personInput.addEventListener("input", function createInputs() {
+personInput.addEventListener("input", () => {
   let clearDivs = document.querySelectorAll(".container-for-persons");
-  let clearResurtDivs = document.querySelectorAll('.js-list-of-person-results');
-
+  
   clearDivs.forEach((e) => {
     e.innerHTML = "";
   });
+
+  let clearResurtDivs = document.querySelectorAll('.js-list-of-person-results');
+
   clearResurtDivs.forEach((e) => {
     e.innerHTML = "";
   });
@@ -36,19 +38,25 @@ personInput.addEventListener("input", function createInputs() {
   let valuePersons = personInput.value;
 
   for (let index = 1; index <= valuePersons; index++) {
+    const element = document.createElement('div');
 
-    personsWindow.innerHTML += `<div class="list-of-person">
+    element.classList.add('list-of-person');
+
+    element.innerHTML =`
     <p class="number number-text" id="${index}">${index}</p>
-    <input type="text" class="person-name input">
-    <input type="number" class="person-bill input">
-  </div>`;
+    <input type="text" class="person-name input" placeholder="Person name">
+    <input type="number" class="person-bill input" placeholder="Bill">`;
+    personsWindow.append(element);
 
-    resultText.innerHTML += `<div class="list-of-person-results">
-    <input id="1" type="checkbox" class="material_checkbox">
+    const element2 = document.createElement('div');
+
+    element2.classList.add('list-of-person-results');
+
+    element2.innerHTML = `<input id="${index}" type="checkbox" class="material_checkbox">
     <p class="number-result" id="${index}">${index}</p>
-    <p class="person-name-result">oleksandr</p>
-    <p class="person-bill-result">49.00</p>
-  </div>`;
+    <p class="person-name-result">Name</p>
+    <p class="person-bill-result">Bill</p>`;
+    resultText.append(element2);
   }
   return;
 });
