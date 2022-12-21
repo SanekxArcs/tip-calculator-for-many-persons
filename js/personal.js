@@ -23,7 +23,6 @@ const peopleLabel = document.createElement('label');
 const peopleH = document.createElement('input');
       peopleH.setAttribute('type', 'number');
       peopleH.setAttribute('id', 'people');
-      peopleH.setAttribute('value', '0');
       peopleH.setAttribute('min', '1');
       peopleH.setAttribute('max', '20');
       peopleH.setAttribute('step', '1');            
