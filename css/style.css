@@ -6,10 +6,10 @@
   --Verylightgrayishcyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
   --Strongcyan: rgb(38, 192, 171);
-  box-sizing:border-box;
-}
 
+}
 html {
+  box-sizing:border-box;
   transition: all 0.4s;
   font-size: 62.5%;
   box-sizing: border-box;
@@ -18,7 +18,6 @@ html {
   border: 0;
   overflow-x: hidden;
 }
-
 body {
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -283,7 +282,7 @@ label {
 .input:hover,
 .input:focus {
   transition: all 0.4s;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.24), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-reset:hover,
@@ -340,19 +339,36 @@ label {
   margin: 2rem 0;
   color: var(--Grayishcyan);
 }
-
 /****************************************/
-/* screen 768px */
+/* screen 834 ipad 11 pro*/
+/****************************************/
+@media screen and (max-width: 835px) {
+  html {
+    font-size: 90%;
+  }
+}
+/****************************************/
+/* screen 768px ipad mini */
 /****************************************/
 @media screen and (max-width: 769px) {
   html {
-    transition: all 0.5s;
+    font-size: 70%;
   }
-  .conteiner {
-    grid-template-columns: 32rem;
-    grid-template-rows: 1fr 1fr;
-    height: auto;
-    width: auto;
+}
+/****************************************/
+/* screen 428 iphone xr / 11 / 14 */
+/****************************************/
+@media screen and (max-width: 429px) {
+  html {
+    font-size: 55%;
+  }
+}
+/****************************************/
+/* screen 390px (pixel 5)*/ 
+/****************************************/
+@media screen and (max-width: 394px) {
+  html {
+    font-size: 50%;
   }
 }
 
@@ -361,15 +377,7 @@ label {
 /****************************************/
 @media screen and (max-width: 376px) {
   html {
-    font-size: 55%;
-  }
-
-  img {
-    margin: 4rem;
-  }
-
-  .conteiner {
-    border-radius: 5rem;
+    font-size: 45%;
   }
 }
 
@@ -378,7 +386,7 @@ label {
 /****************************************/
 @media screen and (max-width: 321px) {
   html {
-    font-size: 45%;
+    font-size: 40%;
   }
 }
 
@@ -393,7 +401,7 @@ input[type="range"].input {
 
 input[type="range"].custom::-webkit-slider-runnable-track {
   width: 100%;
-  height: 40px;
+  height: 4rem;
   cursor: pointer;
   animation: 0.2s;
   background: var(--Lightgrayishcyan);
@@ -402,8 +410,8 @@ input[type="range"].custom::-webkit-slider-runnable-track {
 
 input[type="range"].custom::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 40px;
-  width: 1px;
+  height: 4rem;
+  width: 0.1rem;
   cursor: pointer;
   border-radius: 0rem;
   background: transparent;
@@ -430,7 +438,7 @@ input[type="range"].custom:focus::-webkit-slider-runnable-track {
   position: absolute;
   box-sizing: border-box;
   overflow: hidden;
-  height: 40px;
+  height: 4rem;
   width: 10%;
   display: flex;
   align-items: center;
@@ -462,8 +470,8 @@ input[type="range"].custom:focus::-webkit-slider-runnable-track {
   z-index: -1;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 }
 
 .material_checkbox {
@@ -478,17 +486,17 @@ input[type="range"].custom:focus::-webkit-slider-runnable-track {
 }
 
 .material_checkbox:before {
-  border: 2px solid var(--Strongcyan);
+  border: 0.2rem solid var(--Strongcyan);
   content: "";
   cursor: pointer;
   display: block;
-  height: 15px;
+  height: 1.5rem;
   position: absolute;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 15px;
+  width: 1.5rem;
   z-index: 1;
   border-radius: 0.5rem;
 }
@@ -496,7 +504,7 @@ input[type="range"].custom:focus::-webkit-slider-runnable-track {
 .material_checkbox:checked:before {
   border-top-style: none;
   border-right-style: none;
-  height: 10px;
+  height: 1rem;
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -510,9 +518,9 @@ input[type="range"].custom:focus::-webkit-slider-runnable-track {
   background-color: var(--Verydarkcyan);
   content: "";
   display: block;
-  height: 35px;
+  height: 3.5rem;
   position: absolute;
   top: 0;
-  width: 35px;
+  width: 3.5rem;
   z-index: 0;
 }
