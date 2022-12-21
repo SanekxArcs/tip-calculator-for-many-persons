@@ -6,6 +6,7 @@
   --Verylightgrayishcyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
   --Strongcyan: rgb(38, 192, 171);
+  box-sizing:border-box;
 }
 
 html {
@@ -15,7 +16,7 @@ html {
   margin: 0;
   padding: 0;
   border: 0;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -55,7 +56,7 @@ label {
   border-radius: 2rem;
 }
 
-.wrapper-inner {
+.wrapper_inner {
   display: flex;
   flex-direction: column;
 }
@@ -68,7 +69,7 @@ label {
   position: relative;
 }
 
-.container {
+.wrapper_inner_container {
   width: 36rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -104,33 +105,21 @@ label {
   gap: 1rem;
 }
 
-.list-of-persons {
-  display: grid;
-  place-content: center;
-}
-
-.list-of-person,
-.top-label-persons {
-  display: grid;
-  align-content: center;
-  grid-template-columns: auto 18rem 12rem;
-  column-gap: 1rem;
-  margin-bottom: 0.5rem;
+.new_div_center,
+.top-label-persons,
+.top-label-persons-results,
+.person-bill-result,
+.list-of-person-results {
+  height: 4rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items:center;
+  flex-direction: row;
+  margin: 0.3rem 2rem;
 }
 .top-label-persons-results {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.top-label-persons-results,
-.list-of-person-results {
-  display: grid;
-  align-content: center;
-  grid-template-columns: 2rem auto auto auto;
-  padding: 0 1rem;
-  color: var(--White);
-}
-
-.list-of-person-results {
+  margin: 0 2rem;
 }
 
 .check-boxes,
@@ -172,7 +161,6 @@ label {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   background-color: var(--Verydarkcyan);
   border-radius: 1rem;
 }
@@ -196,6 +184,23 @@ label {
   gap: 1.5rem;
 }
 
+.resultsName {
+  font-size: 2rem;
+  color: var(--White);
+  opacity: 70%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+}
+.span_total {
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  color:var(--White);
+  opacity: 60%;
+  padding-bottom: 2rem;
+}
 /****************************************/
 /* Icons in inputs */
 /****************************************/
@@ -218,31 +223,22 @@ label {
   border: solid 0.2rem;
   border-color: var(--Strongcyan);
 }
-
-.check-boxes-result {
-}
-.personal-number-result {
-}
-.person-name-result {
-}
 .person-bill-result,
 .person-name-result,
-.number-result,
-.check-boxes-result {
-  margin: 0;
-  display: grid;
-  place-items: center;
-  box-sizing: border-box;
-  border-style: none;
-  background-color: transparent;
-  font-weight: inherit;
-  font-family: inherit;
+.number-result {
   font-size: 1.5rem;
-  padding: 1rem;
-  width: 100%;
-  text-align: end;
   color: var(--Strongcyan);
 }
+.total-text {
+  font-size: 2rem;
+  color:var(--White);
+  opacity: 60%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 
 /****************************************/
 /* BTNs Style */
@@ -251,7 +247,6 @@ label {
 .btn {
   border-style: none;
   border-radius: 0.5rem;
-  background-color: var(--Verydarkcyan);
   color: var(--White);
   font-family: inherit;
   font-size: 2rem;
@@ -264,12 +259,17 @@ label {
   background-color: var(--Strongcyan);
 }
 
-.btn-reset {
+.btn-reset,
+.calculate {
   margin: 0 3rem 3rem 3rem;
   background-color: var(--Darkgrayishcyan);
   color: var(--Verydarkcyan);
 }
+.calculate {
+  background-color: var(--Lightgrayishcyan);
+  margin: 0 3rem 1rem 3rem;
 
+}
 .btn:focus,
 .btn:hover,
 .btn:active {
